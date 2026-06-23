@@ -1,0 +1,16 @@
+[Unit]
+Description=PortalPi kiosk launcher
+After=network-online.target graphical.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/portalpi
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/startx /home/pi/portalpi/scripts/start-portalpi.sh -- :0
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
