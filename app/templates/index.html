@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PortalPi</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div id="boot-screen" class="screen boot-screen active">
+    <div class="boot-logo-wrap">
+      <div class="boot-glow"></div>
+      <div class="boot-logo">PORTALPI</div>
+      <div class="boot-subtitle">PS Remote Play launcher</div>
+    </div>
+  </div>
+
+  <main id="home-screen" class="screen home-screen">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">Raspberry Pi 3 · PortalPi</p>
+        <h1>Ready for Remote Play</h1>
+      </div>
+      <button id="quick-settings-button" class="ghost-button">Quick settings</button>
+    </header>
+
+    <section class="hero-card">
+      <div>
+        <p class="eyebrow">Primary action</p>
+        <h2>Start PS Remote Play</h2>
+        <p class="hero-copy">Launch Chiaki directly from the handheld launcher.</p>
+        <div class="hero-actions">
+          <button id="launch-chiaki" class="primary-button">Launch Chiaki</button>
+          <button id="refresh-status" class="ghost-button">Refresh status</button>
+        </div>
+      </div>
+      <div class="hero-status">
+        <div class="status-pill"><span>Wi-Fi</span><strong id="wifi-status">Loading…</strong></div>
+        <div class="status-pill"><span>IP</span><strong id="ip-status">—</strong></div>
+        <div class="status-pill"><span>Temp</span><strong id="temp-status">—</strong></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="panel">
+        <p class="eyebrow">System</p>
+        <h3>PortalPi status</h3>
+        <ul class="status-list">
+          <li><span>Device</span><strong id="device-name">—</strong></li>
+          <li><span>Platform</span><strong id="platform-name">—</strong></li>
+          <li><span>Chiaki</span><strong id="chiaki-status">—</strong></li>
+          <li><span>Disk free</span><strong id="disk-status">—</strong></li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Power</p>
+        <h3>Device actions</h3>
+        <div class="stack-buttons">
+          <button id="reboot-button" class="ghost-button">Reboot</button>
+          <button id="shutdown-button" class="danger-button">Shutdown</button>
+        </div>
+      </article>
+    </section>
+
+    <div id="toast" class="toast"></div>
+  </main>
+
+  <aside id="quick-settings-panel" class="quick-settings hidden">
+    <div class="quick-settings-card">
+      <div class="quick-settings-header">
+        <div>
+          <p class="eyebrow">Overlay</p>
+          <h3>Quick settings</h3>
+        </div>
+        <button id="close-settings" class="ghost-button">Close</button>
+      </div>
+      <div class="quick-grid">
+        <div class="setting-box">
+          <span>Wi-Fi</span>
+          <strong id="qs-wifi">—</strong>
+        </div>
+        <div class="setting-box">
+          <span>IP address</span>
+          <strong id="qs-ip">—</strong>
+        </div>
+        <div class="setting-box">
+          <span>CPU temp</span>
+          <strong id="qs-temp">—</strong>
+        </div>
+        <div class="setting-box">
+          <span>Version</span>
+          <strong id="qs-version">—</strong>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
